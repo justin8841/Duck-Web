@@ -3,13 +3,13 @@ import Email from './email';
 import Password from './password';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { checkProps } from './interfaces/props';
 import './styles/form.css'
-import { newUser } from './users';
 
 
 
   
-const Form:React.FC = ()=>{
+const Form:React.FC<checkProps> = ({newUser})=>{
   const [req, setReq] = useState<string>('')
   const [ageCheck, setAgeCheck] = useState<boolean>(false)
   const [nameCheck, setNameCheck] = useState<boolean>(false)
@@ -20,10 +20,9 @@ const Form:React.FC = ()=>{
   const handleChange= (event:React.ChangeEvent<HTMLInputElement>)=>{
     const newChanges = event.target.value;
     setReq(newChanges)
-    if(newChanges.length > 2) {
+    if(newChanges.length > 2 && newUser != undefined) {
       setNameCheck(true)
       newUser.name = newChanges
-      
     }
   }
     
@@ -32,9 +31,8 @@ const Form:React.FC = ()=>{
   if( emailCheck === true && nameCheck === true && ageCheck === true && passwCheck === true){  
     localStorage.setItem("user1",JSON.stringify(newUser))
     toPage("/assets/components/landing-page")
-  }else {
-    alert("something is wrong")
   }
+  
   }
   return(
     <div className='form-container'>
@@ -42,9 +40,9 @@ const Form:React.FC = ()=>{
         <div className='logo-container'><img src="/images/new-duck-logo.jpeg" alt="logo" /></div>
         <input type="text"  placeholder='Username' onChange={handleChange}/>
         <p> Welcome <b>{req}</b></p>
-        <Email setEmailCheck={setEmailCheck}></Email>
-        <Age setAgeCheck={setAgeCheck}></Age>
-        <Password setPasswCheck={setPasswCheck}></Password>
+        <Email setEmailCheck={setEmailCheck} newUser = {newUser}></Email>
+        <Age setAgeCheck={setAgeCheck } newUser = {newUser}></Age>
+        <Password setPasswCheck={setPasswCheck} newUser = {newUser}></Password>
         <select name="biological sex"  className='election'>
           <option value="Man" className='male' >Man</option>
           <option value="Woman" className='female' >Woman</option>

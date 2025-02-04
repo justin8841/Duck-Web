@@ -1,25 +1,23 @@
 import { useState } from "react"
-import { checkProps } from "../interfaces/props"
-import { newUser } from "./users"
+import { checkProps } from "./interfaces/props"
 
-const Age:React.FC<checkProps> = ({setAgeCheck})=>{
+
+const Age:React.FC<checkProps> = ({setAgeCheck, newUser})=>{
   const[age, setAge]= useState<number | string >('')
   function handleAge(event:React.ChangeEvent<HTMLInputElement>){ 
     event.preventDefault()
     const iValue = parseInt(event.target.value)
       setAge(iValue)
-    if (iValue === 0 && iValue <= 18) {
-      setAgeCheck?.(false)
-      console.log("age is failed")
-      throw console.error("Please write your age");
-    } else if (iValue <= 18) {
+    console.log(newUser)
+
+    if (iValue > 18 && newUser != undefined ) {
+      console.log(newUser)
+      newUser.age = JSON.stringify(iValue)
+      setAgeCheck?.(true)
+    }else {
       setAgeCheck?.(false)
       console.log("you are a kid!")
       setAge(iValue)
-    }else {
-      console.log("Your welcome")
-      newUser.age = JSON.stringify(iValue)
-      setAgeCheck?.(true)
     }
   }
   return(

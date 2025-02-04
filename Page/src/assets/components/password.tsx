@@ -1,8 +1,7 @@
-import { checkProps } from "../interfaces/props";
+import { checkProps } from "./interfaces/props";
 import { useState } from "react";
-import { newUser } from "./users";
 
-const Password: React.FC<checkProps> = ({setPasswCheck})=>{
+const Password: React.FC<checkProps> = ({setPasswCheck, newUser})=>{
   const[pass, setPass] = useState("")
   const caracCheck = (pass: string)=>{
     const haveNum = /[0-9]/.test(pass);
@@ -14,13 +13,16 @@ const Password: React.FC<checkProps> = ({setPasswCheck})=>{
   const handlePassw= (event:React.ChangeEvent<HTMLInputElement>)=>{
   const password= event.target.value
   setPass(password)
+  console.log(pass)
+  
   caracCheck(password)
-  if(pass.length >= 5  && caracCheck(password) === true) {
+  if(pass.length >= 5  && caracCheck(password) === true && newUser != undefined) {
     newUser.password = password
     setPasswCheck?.(true)
   }else {
     setPasswCheck?.(false);
     console.log("password is failed")
+   
   }
 }
   return(

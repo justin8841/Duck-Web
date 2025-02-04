@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { User } from "./interfaces/props"
 import './styles/login.css'
-import { User } from "../interfaces/props"
 
 
 
@@ -13,17 +13,9 @@ const Login = ()=>{
     const [passLog, setPassLog] = useState('')
     const toPage = useNavigate()
     
-
-   
-
-    
-
-    
-    
     const handleUser = (event:React.ChangeEvent<HTMLInputElement>)=>{
         const newUserWrite = event.target.value;
         setLogUser(newUserWrite)
-
     }
     const handleLogPass = (event:React.ChangeEvent<HTMLInputElement>)=>{
         const newPassWrite = event.target.value;
