@@ -1,0 +1,81 @@
+
+.form-container{
+  width: 900px;
+  height: 800px;
+  background: #f72020;
+  border: 2px solid #000;
+  border-radius: 33px;
+}
+.form-container h2 {
+  margin-bottom: 80px;
+  font-size: 40px;
+}
+.form-container p {
+  margin: 25px;
+  font-size: 30px;
+}
+.Inp-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.logo-container {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(246, 254, 7);
+  border: 6px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.logo-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #000;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+.election{
+  width: 80%;
+  height: 40px;
+  border-radius: 22px;
+  padding: 8px;
+  text-align: center;
+  font-size: 18px;
+}
+.female{
+  background-color: hwb(347 2% 2%);
+}
+.male{
+  background-color: #22ff;
+}
+.female:hover {
+  color: #000;
+}
+.Inp-container input{
+  width: 90%;
+  height: 50px;
+  border-radius: 22px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.Inp-container button{
+  margin: 20px;
+  width: 300px;
+}
+
+
+  
+  
+  

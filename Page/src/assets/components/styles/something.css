@@ -1,0 +1,21 @@
+
+.push{
+  margin: auto;
+  }
+.something{
+  margin: auto;
+  max-width: 850px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #e21;
+  }
+.something p {
+  color: #000;
+  padding: 5px 20px 5px 20px;
+  background-color: #ddd;
+  border-radius: 15px;
+  }    

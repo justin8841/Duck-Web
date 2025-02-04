@@ -1,0 +1,36 @@
+
+.log-container {
+  border: 3px solid #000;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(70, 90, 255, .2);
+  border-radius: 30px;
+}
+.log-container input {
+  width: 80%;
+  margin: 5px;
+  height: 30px;
+}
+.log-container button{
+  margin-top: 20px;
+  width: 60%;
+  height: 25px;
+}
+.log-container h1 {
+  margin-bottom: 70px;
+  text-decoration: underline;
+}
+.log-container p {
+  margin: 0;
+}
+
+.correct {
+  color: green;
+}
+.incorrect {
+  color: red;
+}    
