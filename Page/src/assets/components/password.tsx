@@ -7,22 +7,17 @@ const Password: React.FC<checkProps> = ({setPasswCheck, newUser})=>{
     const haveNum = /[0-9]/.test(pass);
     const haveBcarac = /[!@#$%^&*()+=[\]{};':"\\|,.<>/?]/.test(pass);
     let result = false;
-
     return(haveBcarac === false && haveNum === true )?   result = true  :  result
   }
   const handlePassw= (event:React.ChangeEvent<HTMLInputElement>)=>{
   const password= event.target.value
   setPass(password)
-  console.log(pass)
-  
   caracCheck(password)
   if(pass.length >= 5  && caracCheck(password) === true && newUser != undefined) {
     newUser.password = password
     setPasswCheck?.(true)
   }else {
     setPasswCheck?.(false);
-    console.log("password is failed")
-   
   }
 }
   return(

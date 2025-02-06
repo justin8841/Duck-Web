@@ -13,3 +13,11 @@ export interface User{
     email?: string;
     age?: number | string;
 }  
+export interface logUser{
+    user :{
+    username: string;
+    img: string;
+    state: string;
+    id: number;
+    }
+}

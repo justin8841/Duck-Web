@@ -8,15 +8,12 @@ const Age:React.FC<checkProps> = ({setAgeCheck, newUser})=>{
     event.preventDefault()
     const iValue = parseInt(event.target.value)
       setAge(iValue)
-    console.log(newUser)
 
     if (iValue > 18 && newUser != undefined ) {
-      console.log(newUser)
       newUser.age = JSON.stringify(iValue)
       setAgeCheck?.(true)
     }else {
       setAgeCheck?.(false)
-      console.log("you are a kid!")
       setAge(iValue)
     }
   }
