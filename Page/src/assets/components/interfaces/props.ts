@@ -19,5 +19,6 @@ export interface logUser{
     img: string;
     state: string;
     id: number;
+    description: string;
     }
 }
