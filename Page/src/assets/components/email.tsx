@@ -3,6 +3,8 @@ import { useState } from "react";
 
 const Email: React.FC<checkProps> = ({setEmailCheck, newUser})=>{
   const [mail, setMail] = useState<string>('')
+
+  // Function to check if the email is valid . Simple validation and check if the email contains "_"
   const handleMail= (event:React.ChangeEvent<HTMLInputElement>)=>{
     const newMails = event.target.value;
     setMail(newMails)

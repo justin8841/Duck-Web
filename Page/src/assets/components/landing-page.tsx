@@ -1,7 +1,12 @@
 
 import './styles/landing.css'
 import './styles/post.css'
+import './styles/nav.css'
 import Post from './post'
+import Navbar from './nav'
+
+
+// Array of objects with examples of posts
 const examples = [
 {
     username: 'user1',
@@ -48,10 +53,13 @@ const examples = [
 ]
 
 
+
+
 const Landing = ()=>{
    
     return(
         <>
+        <Navbar></Navbar>
         <div className="landing-container">
         {examples.map((example)=>{
             return(

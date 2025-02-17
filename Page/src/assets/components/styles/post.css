@@ -67,8 +67,13 @@
     width: 95%;
     max-width: 95%;
     overflow: hidden;
+    padding: 2px;
 }
-
+.description:hover{
+    cursor: pointer;
+    user-select:none ;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
 .links{
     margin-left: 5px;

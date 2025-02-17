@@ -4,10 +4,13 @@ import {logUser} from './interfaces/props'
 
 
 
+
 const Post = (loguser: logUser)=>{
     const [click, setClick] = useState('#aaa')
     const [toggle, setToggle] = useState('description-container')
-   const [likes, setLikes] = useState(0)
+    const [likes, setLikes] = useState(0)
+
+    // likes function, add a like to the post and remove it if it is already liked. Use a State to change the color of the like button
     const liked = ()=>{
         setClick('#dddd00')
         setLikes(likes + 1)
@@ -16,13 +19,14 @@ const Post = (loguser: logUser)=>{
             setLikes(likes - 1)
         }
     }
+    // toggle function, expand the description of the user
     const toggleClass = ()=>{
         setToggle('description-container-expanded')
         if (toggle === 'description-container-expanded') {
             setToggle('description-container')
         }
     }
-
+    // get the user information from the props
     const image = loguser.user.img
     const uName = loguser.user.username
     const uState = loguser.user.state

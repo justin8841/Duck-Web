@@ -13,6 +13,7 @@ const Login = ()=>{
     const [passLog, setPassLog] = useState('')
     const toPage = useNavigate()
     
+    //Functions to get the value of inputs and set them to the state
     const handleUser = (event:React.ChangeEvent<HTMLInputElement>)=>{
         const newUserWrite = event.target.value;
         setLogUser(newUserWrite)
@@ -21,7 +22,12 @@ const Login = ()=>{
         const newPassWrite = event.target.value;
         setLogPass(newPassWrite)
     }
+
+
+    //Function to valid user info are registered and redirect to the landing page
     const handleSubmit = (event:React.FormEvent<HTMLFormElement>)=>{
+
+        // Get the user and password from the local storage and parse them to a JSON object
         const algo = localStorage.getItem("user1")
         let neuAlgo:User = {}
         if (algo != null) {
@@ -30,6 +36,7 @@ const Login = ()=>{
         const user = neuAlgo.name
         const pass = neuAlgo.password
         event.preventDefault()
+        // Check if the user and password are correct and redirect to the landing page
         if (logUser === user && logPass === pass) {
             toPage('/assets/components/landing-page')            
         } else {

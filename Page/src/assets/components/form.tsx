@@ -16,8 +16,9 @@ const Form:React.FC<checkProps> = ({newUser})=>{
   const [emailCheck, setEmailCheck] = useState<boolean>(false)
   const [passwCheck, setPasswCheck] = useState<boolean>(false)
   const [cuak, setCuack] = useState(true)
-  
+
   const toPage = useNavigate()
+  // Function to check if the name is valid . Simple validation and check if the name is longer than 2 characters
   const handleChange= (event:React.ChangeEvent<HTMLInputElement>)=>{
     const newChanges = event.target.value;
     setReq(newChanges)
@@ -26,7 +27,7 @@ const Form:React.FC<checkProps> = ({newUser})=>{
       newUser.name = newChanges
     }
   }
-    
+  //Function to check if properties are valid and if they are, save them in the local storage. Use local storage, usaNavigate and States in this part 
   const handleSubmit = (event:React.FormEvent<HTMLFormElement>)=>{
   event.preventDefault();
   if( emailCheck === true && nameCheck === true && ageCheck === true && passwCheck === true){  
@@ -35,7 +36,6 @@ const Form:React.FC<checkProps> = ({newUser})=>{
     toPage("/assets/components/landing-page")
     
   }else {
-    console.log('something is wrong')
     setCuack(false)}
   
   }

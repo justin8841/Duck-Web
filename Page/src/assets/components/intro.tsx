@@ -1,15 +1,19 @@
 import { useNavigate } from "react-router-dom"
 import './styles/intro.css'
+
+
+
 const Welcome = ()=>{
  
+  // Function to navigate to the form page
     const navigate = useNavigate()
-      const handleForm = ()=>{
-        navigate("/assets/components/form")
-      }
-      const handleLogin = ()=>{
-        navigate("/assets/components/login")
-      }
-    
+    const handleForm = ()=>{
+      navigate("/assets/components/form")
+    }
+    const handleLogin = ()=>{
+      navigate("/assets/components/login")
+    }
+  
       return(
         <>
         <h1 className="intro-title">¡Ducks web!</h1>
