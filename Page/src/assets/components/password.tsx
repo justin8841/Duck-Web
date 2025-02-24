@@ -25,7 +25,12 @@ const Password: React.FC<checkProps> = ({setPasswCheck, newUser})=>{
   }
 }
   return(
-    <input type="password" placeholder='Password' value={pass} required onChange={handlePassw}/>
+
+    <>
+    <label htmlFor="password">Password</label>
+    <input type="password" placeholder='******' value={pass} required onChange={handlePassw}/>
+    </>
+    
   )
 }
 

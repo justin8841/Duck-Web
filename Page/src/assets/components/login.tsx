@@ -9,8 +9,6 @@ import './styles/login.css'
 const Login = ()=>{
     const [logUser, setLogUser]= useState('')
     const [logPass, setLogPass] = useState('')
-    const [userLog, setUserLog] = useState('')
-    const [passLog, setPassLog] = useState('')
     const toPage = useNavigate()
     
     //Functions to get the value of inputs and set them to the state
@@ -41,23 +39,17 @@ const Login = ()=>{
             toPage('/assets/components/landing-page')            
         } else {
             alert("You are not registered")
-            if (logUser != user) {
-                setUserLog('incorrect')
-            }
-            if (logPass != pass) {
-                setPassLog('incorrect')
-            }
         }
     }
     return (
         <>
         <form className="log-container" onSubmit={handleSubmit}>
             <h1>Welcome cuack</h1>
-            <p className={userLog}>User</p>
+            <label htmlFor="username">User</label>
             <input type="text" placeholder="User" onChange={handleUser} value={logUser} />
-            <p className={passLog}>Password</p>
-            <input type="text" placeholder="Password" onChange={handleLogPass} value={logPass}/>
-            <button> Login</button>
+            <label htmlFor="password">Password</label>
+            <input type="text" placeholder="******" onChange={handleLogPass} value={logPass}/>
+            <button type="submit"> Login</button>
         </form>
         </>
     )

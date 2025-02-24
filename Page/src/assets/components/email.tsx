@@ -20,7 +20,12 @@ const Email: React.FC<checkProps> = ({setEmailCheck, newUser})=>{
     
   }
   return(
-    <input type="email" value={mail} placeholder='Email' required onChange={handleMail}/>
+
+    <>
+    <label htmlFor="email">Email</label>
+    <input type="email" value={mail} placeholder='example@gmail.com' required onChange={handleMail}/>
+    </>
+    
   )
 }
 

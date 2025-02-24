@@ -45,8 +45,9 @@ const Form:React.FC<checkProps> = ({newUser})=>{
         <div className='logo-container'>
           <img src="/images/new-duck-logo.jpeg" alt="logo" className='logo' />
         </div>
-        <input type="text"  placeholder='Username' onChange={handleChange}/>
-        <p className='welcome'> Welcome <b>{req}</b></p>
+        <label htmlFor="username">Name</label>
+        <input type="text"  placeholder='Steve/Juan/etc..' onChange={handleChange}/>
+        <label className='welcome'> Welcome <b>{req}</b></label>
         {(cuak ? '' : (
           <div className='fail-alert'>
             <p className='incorrect'>Something is wrong</p>
@@ -59,7 +60,7 @@ const Form:React.FC<checkProps> = ({newUser})=>{
           <option value="Man" className='male' >Man</option>
           <option value="Woman" className='female' >Woman</option>
         </select>
-        <button className='submit'>Submit</button>
+        <button className='submit' type='submit'>Submit</button>
       </form>
 
     </div>

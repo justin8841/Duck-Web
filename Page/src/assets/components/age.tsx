@@ -20,7 +20,11 @@ const Age:React.FC<checkProps> = ({setAgeCheck, newUser})=>{
     }
   }
   return(
-    <input type="number" value={age} placeholder='Age' required onChange={handleAge} className='age'/>
+    <>
+    <label htmlFor="age">Age</label>
+    <input type="number" value={age} required onChange={handleAge} className='age'/>
+    </>
+    
   )
 }
 
